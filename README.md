@@ -1,3 +1,6 @@
+> [!WARNING]
+> Sorry, I'll write an explanation about the project later.
+
 # fumadocsv0
 
 This is a Next.js application generated with
