@@ -1,0 +1,150 @@
+---
+title: "Map Design Patterns"
+description: "Exploring common design patterns used in mapping applications."
+date: 2024-10-10
+---
+# Common Map Design Patterns
+
+### Static / JAMStack / Docs
+- Strategy: เลือก renderer/markdown flavor (ข้อดี: สลับพฤติกรรมง่าย | ข้อควรระวัง: ไฟล์เยอะเกิน)
+- Adapter: ต่อ search provider หลายเจ้า (Local/Algolia)
+- Builder: pipeline สร้างหน้า (config→page)
+- Observer (dev): rebuild on file-change
+- Facade: รวม API ของ generator/plugins ให้เรียกง่าย
+
+### Blog / CMS
+- Factory Method / Abstract Factory: สร้างองค์ประกอบ UI ตาม Theme (Dark/Light)
+- Decorator: เสริมความสามารถโพสต์ (SEO tags, excerpt) แบบพลิกแพลง
+- Composite: หน้า = section ย่อย (Hero, TOC, Content, Sidebar)
+- Command: draft/publish/rollback โพสต์
+- Proxy: แคช/read-through สำหรับหน้า hot
+
+### E-commerce / Marketplace
+- Strategy: คำนวณค่าขนส่ง/โปรโมชัน/ภาษี (สลับนโยบายตามประเทศ/เทศกาล)
+- State: ตะกร้า/คำสั่งซื้อ (New→Paid→Shipped→Completed)
+- Chain of Responsibility: checkout pipeline (validate stock→payment→invoice)
+- Observer: แจ้งเตือนสต็อก/ราคา, webhooks payment
+- Specification: ฟิลเตอร์สินค้า/เงื่อนไขโปรโมชัน
+- Repository + Unit of Work (Architectural): คุมธุรกรรมสั่งซื้อ
+- ข้อดี: ชัดเจน/เทสต์ง่าย | ข้อควรระวัง: ซับซ้อนเร็ว ต้องมี test ที่ดี
+
+### SaaS / Dashboard
+- Decorator: feature-flags per plan (Basic→Pro)
+- Strategy: นโยบาย billing/proration
+- Observer / Pub-Sub: ส่งอีเมล/กิจกรรม audit
+- Facade: รวมบริการภายนอก (Stripe, SendGrid, S3)
+- CQRS (Architectural): แยกอ่าน/เขียนเพื่อสเกล
+- ข้อดี: แยก concern ดี | ระวัง: over-engineering สำหรับ MVP เล็ก
+
+### Real-time / Collaboration
+- Observer: presence/typing indicators
+- Memento: snapshot เอกสารสำหรับ undo
+- Command: operation (insert/delete) ที่ replay ได้
+- Mediator: ประสานหลาย client ผ่าน server hub
+- Adapter: สลับ transport (WebSocket/SSE/WebRTC)
+- ข้อดี: คุมการเปลี่ยนแปลง | ระวัง: ต้องออกแบบ latency & conflict
+
+### Social / Community
+- Observer: feed/notification
+- Strategy: ranking/feed algorithm สลับง่าย
+- Flyweight: โปรไฟล์/avatars ซ้ำจำนวนมาก
+- Proxy: rate-limit/edge cache
+- Specification: moderation rules
+- ระวัง: ขยายระบบ moderation ให้โปร่งใส/ปรับได้
+
+### Booking / Ticketing
+- State: Slot (Available→Held→Booked→Expired)
+- Command: hold/release/book ทำเป็น atomic steps
+- Saga (Architectural): จัดการธุรกรรมกระจาย (จ่ายเงิน+ล็อกทรัพยากร)
+- Strategy: pricing/overbooking policy
+
+### Education / LMS
+- Strategy: grading policy/attempt policy
+- Template Method: โครงสร้างบทเรียน/quiz flow
+- Observer: progression/events
+- Composite: Course→Module→Lesson→Item
+- ข้อดี: โครงชัด/ขยายหลักสูตรง่าย
+
+### Media / Streaming
+- Strategy: เลือก bitrate/codec policy
+- Adapter: player หลายแพลตฟอร์ม
+- Facade: รวม DRM/CDN/encoder
+- Flyweight: เมตาดาต้าจำนวนมาก
+- Proxy: edge caching
+
+### Admin Panel / Backoffice
+- Command: งานแก้ไขข้อมูลที่ undo/redo ได้
+- Memento: snapshot ก่อนแก้ไข
+- Observer: audit/notification
+- Facade: service รวม “การค้นหา+กรอง+export”
+- ข้อดี: ลด coupling, ดีต่อ data governance
+
+### API-first / Headless
+- Adapter: ต่อหลาย provider (payment, search)
+- Facade: ให้ front-end เรียกผ่าน service เดียว
+- Builder: สร้าง query/DTO ที่ซับซ้อน
+- Interpreter: ฟิลเตอร์/เงื่อนไขค้นหาแบบ DSL
+
+### Portal/Docs Dev
+- Strategy: versioning policy (stable/next)
+- Composite: หน้าคู่มือย่อยจำนวนมาก
+- Bridge: แยก “โครงหน้า” ออกจาก “ธีม”
+
+### PWA / Offline-first
+- Proxy (Service Worker): cache & network race
+- Command + Event Sourcing: เก็บงาน offline แล้ว sync
+- Memento: เก็บสถานะ local ก่อน sync
+- ข้อดี: UX ดีตอนออฟไลน์ | ระวัง: conflict resolution
+
+### Microservices Platform
+- Observer / Pub-Sub: event-driven
+- Gateway / Facade: API Gateway รวมหลาย service
+- Circuit Breaker (Resilience pattern): กันล้มโดมิโน
+- Saga: ธุรกรรมข้าม service
+- ข้อดี: scale/ทีมทำงานอิสระ | ระวัง: ops** ซับซ้อน**
+
+### Example Side Of Frontend/Backend
+- Simple (TS/Frontend) – Strategy สำหรับคำนวนค่าขนส่ง
+
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+
+<DynamicCodeBlock lang="ts" code='interface ShippingStrategy { calc(total: number): number }
+class FlatRate implements ShippingStrategy { calc(t){ return t+50 } }
+class ByWeight implements ShippingStrategy { constructor(private w:number){} calc(t){ return t+this.w*20 } }
+
+class Checkout {
+  constructor(private ship: ShippingStrategy) {}
+  totalWithShipping(subtotal:number){ return this.ship.calc(subtotal) }
+}
+// ใช้:
+const co = new Checkout(new ByWeight(3)); // สลับเป็น FlatRate ได้ทันที
+' />
+# 
+- Technical (Backend/Node) – Chain of Responsibility สำหรับ Checkout
+
+<DynamicCodeBlock lang="ts" code='type Ctx = { cartOk?:boolean; paid?:boolean; invoiced?:boolean; data:any }
+abstract class Step { next?: Step; setNext(s:Step){ this.next=s; return s } handle(c:Ctx){ this.do(c); this.next?.handle(c) } protected abstract do(c:Ctx):void }
+class ValidateCart extends Step { protected do(c){ /* ... */ c.cartOk=true } }
+class Pay extends Step { protected do(c){ /* ... */ c.paid=true } }
+class Invoice extends Step { protected do(c){ /* ... */ c.invoiced=true } }
+
+const flow = new ValidateCart(); flow.setNext(new Pay()).setNext(new Invoice());
+flow.handle({data:{/*...*/}});
+' />
+
+#
+
+<DynamicCodeBlock
+  lang="ts"
+  code='console.log("Hello World")'
+  options={{
+    themes: {
+      light: 'github-light',
+      dark: 'github-dark',
+    },
+    components: {
+      // override components (e.g. `pre` and `code`)
+    },
+    // other Shiki options
+  }}
+/>
