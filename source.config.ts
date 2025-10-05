@@ -6,11 +6,31 @@ import {
 } from 'fumadocs-mdx/config';
 import { remarkMdxMermaid, remarkMdxFiles, remarkAdmonition } from 'fumadocs-core/mdx-plugins';
 
+// Define docs collection (content/docs)
+export const docsCollection = defineDocs({
+  dir: 'content/docs',
+  docs: {
+    schema: frontmatterSchema,
+  },
+  meta: {
+    schema: metaSchema,
+  },
+});
 
+// Define projects collection (content/projects)
+export const projectsCollection = defineDocs({
+  dir: 'content/projects',
+  docs: {
+    schema: frontmatterSchema,
+  },
+  meta: {
+    schema: metaSchema,
+  },
+});
 
-// You can customise Zod schemas for frontmatter and `meta.json` here
-// see https://fumadocs.dev/docs/mdx/collections#define-docs
-export const docs = defineDocs({
+// Define blogs collection (content/blogs)
+export const blogsCollection = defineDocs({
+  dir: 'content/blogs',
   docs: {
     schema: frontmatterSchema,
   },
