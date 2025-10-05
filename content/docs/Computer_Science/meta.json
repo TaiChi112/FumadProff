@@ -1,0 +1,19 @@
+{
+    "title":"Computer Science",
+    "description":"Computer Science Documentation",
+    "icon":"Book",
+    "root":false,
+    "pages":[
+        "AI",
+        "DSA",
+        "COA",
+        "TOC",
+        "CN",
+        "HCI",
+        "OOP",
+        "FP",
+        "SWE",
+        "DS",
+        "DIP"
+    ]
+}
