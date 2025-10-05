@@ -1,9 +1,20 @@
-import { docs } from '@/.source';
+import { docsCollection, projectsCollection, blogsCollection } from '@/.source';
 import { loader } from 'fumadocs-core/source';
 
-// See https://fumadocs.vercel.app/docs/headless/source-api for more info
+// Source for documentation pages
 export const source = loader({
-  // it assigns a URL to your pages
   baseUrl: '/docs',
-  source: docs.toFumadocsSource(),
+  source: docsCollection.toFumadocsSource(),
+});
+
+// Source for project pages
+export const projectsSource = loader({
+  baseUrl: '/projects',
+  source: projectsCollection.toFumadocsSource(),
+});
+
+// Source for blog pages
+export const blogsSource = loader({
+  baseUrl: '/blogs',
+  source: blogsCollection.toFumadocsSource(),
 });

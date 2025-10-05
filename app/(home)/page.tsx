@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col justify-center text-center">
-      <h1 className="mb-4 text-2xl font-bold">Hello World</h1>
+      <h1 className="mb-4 text-2xl font-bold">TaiChi112</h1>
       <p className="text-fd-muted-foreground">
         You can open{' '}
         <Link
@@ -13,6 +13,22 @@ export default function HomePage() {
           /docs
         </Link>{' '}
         and see the documentation.
+        You can open{' '}
+        <Link
+          href="/projects"
+          className="text-fd-foreground font-semibold underline"
+        >
+          /projects
+        </Link>{' '}
+        and see the Projects.
+        You can open{' '}
+        <Link
+          href="/blogs"
+          className="text-fd-foreground font-semibold underline"
+        >
+          /blogs
+        </Link>{' '}
+        and see the Blogs.
       </p>
     </main>
   );
