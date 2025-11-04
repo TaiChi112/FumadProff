@@ -4,7 +4,9 @@ import { blogsSource } from '@/lib/source';
 
 export default function Layout({ children }: LayoutProps<'/blogs'>) {
   return (
-    <DocsLayout tree={blogsSource.pageTree} {...baseOptions()}>
+    <DocsLayout
+      tree={blogsSource.pageTree}
+      {...baseOptions()}>
       {children}
     </DocsLayout>
   );

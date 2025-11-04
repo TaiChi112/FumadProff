@@ -6,3 +6,44 @@ date: 2024-06-15
 
 # Blogs Development 
 - Welcome to our blog section! Here you'll find a variety of articles covering different topics, insights, and updates. Stay tuned for regular posts and feel free to explore the content.
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions type="single">
+  <Accordion title="What is CS">Description of Computer Science</Accordion>
+</Accordions>
+
+#
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+<Files>
+  <Folder name="app" defaultOpen>
+    <File name="layout.tsx" />
+    <File name="page.tsx" />
+    <File name="global.css" />
+  </Folder>
+  <Folder name="components">
+    <File name="button.tsx" />
+    <File name="tabs.tsx" />
+    <File name="dialog.tsx" />
+  </Folder>
+  <File name="package.json" />
+</Files>
+#
+import { GithubInfo } from 'fumadocs-ui/components/github-info';
+
+<GithubInfo
+  owner="TaiChi112"
+  repo="FumadProff"
+  token={process.env.GITHUB_TOKEN}
+/>
+
+import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
+
+<InlineTOC items={toc} />
+
+{/* <DocsPage>
+  ...
+  <InlineTOC items={toc} />
+  ...
+</DocsPage> */}

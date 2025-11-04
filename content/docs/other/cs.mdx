@@ -1,0 +1,107 @@
+---
+title: Computer Science
+description: Learn the fundamentals of computer science, including algorithms, data structures, and programming concepts.
+---
+
+<Callout title="Warning" type="warning">
+   This document is still in the process of being developed as a Computer Science syllabus, so changes are subject to change at any time in the content of the document and the class schedule.
+</Callout>
+
+## Introduction to Computer Science
+- Computer Science is the study of computers and computational systems. It encompasses a wide range of topics, including algorithms, data structures, programming languages, software development, and more.
+
+## JavaScript Example
+```js
+function helloWorld() {
+  console.log("Hello, World!");
+}
+```
+## Files
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+<Files>
+  <Folder name="app" defaultOpen>
+    <File name="layout.tsx" />
+    <File name="page.tsx" />
+    <File name="global.css" />
+  </Folder>
+  <Folder name="components">
+    <File name="button.tsx" />
+    <File name="tabs.tsx" />
+    <File name="dialog.tsx" />
+  </Folder>
+  <File name="package.json" />
+</Files>
+
+{/* ```files
+project
+├── src
+│   ├── index.js
+│   └── utils
+│       └── helper.js
+├── package.json
+``` */}
+
+## Mermaid Diagram
+
+```mermaid
+classDiagram
+    class Animal {
+        +String name
+        +int age
+        +void makeSound()
+    }
+    class Dog {
+        +void bark()
+    }
+    class Cat {
+        +void meow()
+    }
+    Animal <|-- Dog
+    Animal <|-- Cat
+```
+
+<Mermaid
+  chart="graph TD;
+    A[Start] --> B{Is it working?};
+    B -- Yes --> C[Celebrate];
+    B -- No --> D[Debug];
+    D --> B;
+    C --> E[End];"
+/>
+
+<Mermaid
+  chart="
+graph TD;
+subgraph AA [Consumers]
+A[Mobile app];
+B[Web app];
+C[Node.js client];
+end
+subgraph BB [Services]
+E[REST API];
+F[GraphQL API];
+G[SOAP API];
+end
+Z[GraphQL API];
+A --> Z;
+B --> Z;
+C --> Z;
+Z --> E;
+Z --> F;
+Z --> G;"
+/>
+
+<Cards>
+  <Card title="Algorithms" description="Study of step-by-step procedures for calculations." />
+  <Card title="Data Structures" description="Organizing and storing data efficiently." />
+  <Card title="Programming Languages" description="Different languages used to write software." />
+  <Card title="Software Development" description="Process of creating and maintaining applications." />
+</Cards>
+
+<a style={{
+  display: 'inline-block',
+  marginTop: '2rem',
+  color: '#0070f3',
+}} href="https://github.com/TaiChi112/FumadProff/blob/main/content/docs/cs.mdx" target="_blank" class="editLink_e1cfa">📝 Edit this page on GitHub</a>

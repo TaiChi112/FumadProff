@@ -1,4 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { BookIcon, Cuboid, FolderKanban } from 'lucide-react';
 
 /**
  * Shared layout configurations
@@ -9,6 +10,7 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
  */
 export function baseOptions(): BaseLayoutProps {
   return {
+    githubUrl:"https://github.com/TaiChi112",
     nav: {
       title: (
         <>
@@ -20,11 +22,30 @@ export function baseOptions(): BaseLayoutProps {
           >
             <circle cx={12} cy={12} r={12} fill="currentColor" />
           </svg>
-          My App
+          TaiChi112
         </>
       ),
     },
     // see https://fumadocs.dev/docs/ui/navigation/links
-    links: [],
+    links: [
+      {
+        icon: <BookIcon />,
+        text: 'Docs',
+        url: '/docs',
+        secondary: true
+      },
+      {
+        icon: <Cuboid />,
+        text: 'Blogs',
+        url: '/blogs',
+        secondary: true
+      },
+      {
+        icon: <FolderKanban />,
+        text: 'Projects',
+        url: '/projects',
+        secondary: true
+      },
+    ],
   };
 }

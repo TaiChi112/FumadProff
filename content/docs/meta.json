@@ -1,5 +1,8 @@
 {
-    "pages":[
+    "title": "Documentation",
+    "description": "A collection of documents and resources on various topics including computer science, operating systems, user interfaces, programming languages, and more.",
+    "root": true,
+    "pages": [
         "Computer_Science",
         "Operating_System",
         "ui",
