@@ -2,18 +2,19 @@
     "title":"Computer Science",
     "description":"Computer Science Documentation",
     "icon":"Book",
-    "root":false,
+    "defaultOpen":false,
     "pages":[
         "AI",
-        "DSA",
         "COA",
-        "TOC",
         "CN",
-        "HCI",
+        "DSA",
+        "DIP",
+        "DM",
+        "DS",
+        "TOC",
         "OOP",
         "FP",
-        "SWE",
-        "DS",
-        "DIP"
+        "HCI",
+        "SWE"
     ]
 }
