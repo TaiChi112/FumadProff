@@ -6,12 +6,18 @@ import {
   DocsTitle,
 } from 'fumadocs-ui/page';
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
 
 export default async function Page(props: PageProps<'/docs/[[...slug]]'>) {
   const params = await props.params;
+  
+  // Redirect to Computer_Science when visiting /docs root
+  if (!params.slug || params.slug.length === 0) {
+    redirect('/docs/Computer_Science');
+  }
+  
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
