@@ -6,7 +6,9 @@ export default function Layout({ children }: LayoutProps<'/blogs'>) {
   return (
     <DocsLayout
       tree={blogsSource.pageTree}
-      {...baseOptions()}>
+      {...baseOptions()}
+      nav={{ ...baseOptions().nav, enabled: true }}
+    >
       {children}
     </DocsLayout>
   );
