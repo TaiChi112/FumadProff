@@ -5,6 +5,8 @@ import {
   metaSchema,
 } from 'fumadocs-mdx/config';
 import { remarkMdxMermaid, remarkMdxFiles, remarkAdmonition } from 'fumadocs-core/mdx-plugins';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // Define docs collection (content/docs)
 export const docsCollection = defineDocs({
@@ -41,6 +43,8 @@ export const blogsCollection = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    remarkPlugins: [remarkMdxMermaid, remarkMdxFiles, remarkAdmonition],
+    remarkPlugins: [remarkMath, remarkMdxMermaid, remarkMdxFiles, remarkAdmonition],
+    // rehypePlugins: [[rehypeKatex, { output: 'html' }]],
+    rehypePlugins: (v) => [rehypeKatex, ...v],
   },
 });
