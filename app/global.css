@@ -2,16 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  @import 'fumadocs-ui/css/neutral.css';
-  @import 'fumadocs-ui/css/preset.css';
-  @import 'fumadocs-ui/css/shadcn.css';
-}
-/* @import 'fumadocs-ui/css/<theme>.css'; */
-
-/* :root {
+:root {
     --fd-layout-width: 1400px;
-} */
+}
 
 /* @theme {
     --color-fd-background: hsl(0, 0%, 96%);
