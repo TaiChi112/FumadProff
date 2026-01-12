@@ -1,0 +1,25 @@
+$ next build
+   ▲ Next.js 15.5.9
+   - Environments: .env
+
+[MDX] updated map file in 83.22399999999993ms
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 7.8s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/49) ...
+   Generating static pages (12/49) 
+Error occurred prerendering page "/blogs". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: Failed to fetch repository data: {
+  "message": "Bad credentials",
+  "documentation_url": "https://docs.github.com/rest",
+  "status": "401"
+}
+    at g (D:\RepositoryVS\Others\fumadocsv0\.next\server\chunks\8858.js:1:65374)
+    at async h (D:\RepositoryVS\Others\fumadocsv0\.next\server\chunks\8858.js:1:65556) {
+  digest: '3992398342'
+}
+Export encountered an error on /blogs/[[...slug]]/page: /blogs, exiting the build.
+Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 76
+ ⨯ Next.js build worker exited with code: 3221226505 and signal: null
+error: script "build" exited with code 9
