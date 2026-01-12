@@ -1,7 +1,9 @@
 import type { Config } from 'tailwindcss';
 // import plugin from 'tailwindcss/plugin';
+// import { createPreset } from 'fumadocs-ui/tailwind-plugin';
 
 export default {
+//   presets: [createPreset()],
   darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -48,6 +50,10 @@ export default {
 //           border: 'hsl(var(--border) / <alpha-value>)',
 //           input: 'hsl(var(--input) / <alpha-value>)',
 //           ring: 'hsl(var(--ring) / <alpha-value>)',
+//           'diff-remove': 'rgb(254, 202, 202)',
+//           'diff-add': 'rgb(187, 247, 208)',
+//           'diff-remove-symbol': 'rgb(220, 38, 38)',
+//           'diff-add-symbol': 'rgb(22, 163, 74)',
 //         },
 //       },
 //     },
