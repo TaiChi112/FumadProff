@@ -1,25 +1,216 @@
-$ next build
-   ▲ Next.js 15.5.9
-   - Environments: .env
-
-[MDX] updated map file in 83.22399999999993ms
-   Creating an optimized production build ...
- ✓ Compiled successfully in 7.8s
-   Linting and checking validity of types ...
-   Collecting page data ...
-   Generating static pages (0/49) ...
-   Generating static pages (12/49) 
-Error occurred prerendering page "/blogs". Read more: https://nextjs.org/docs/messages/prerender-error
-Error: Failed to fetch repository data: {
-  "message": "Bad credentials",
-  "documentation_url": "https://docs.github.com/rest",
-  "status": "401"
-}
-    at g (D:\RepositoryVS\Others\fumadocsv0\.next\server\chunks\8858.js:1:65374)
-    at async h (D:\RepositoryVS\Others\fumadocsv0\.next\server\chunks\8858.js:1:65556) {
-  digest: '3992398342'
-}
-Export encountered an error on /blogs/[[...slug]]/page: /blogs, exiting the build.
-Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 76
- ⨯ Next.js build worker exited with code: 3221226505 and signal: null
-error: script "build" exited with code 9
+20:33:51.340 Running build in Washington, D.C., USA (East) – iad1
+20:33:51.341 Build machine configuration: 2 cores, 8 GB
+20:33:51.534 Cloning github.com/TaiChi112/FumadProff (Branch: main, Commit: 93341f8)
+20:33:51.893 Cloning completed: 359.000ms
+20:33:52.955 Restored build cache from previous deployment (HC7ariwQzSyLCjqfBS9PxN1wMiXg)
+20:33:53.697 Running "vercel build"
+20:33:54.199 Vercel CLI 50.1.6
+20:33:54.626 Installing dependencies...
+20:34:08.834 
+20:34:08.834 > fumadocsv0@0.0.0 postinstall
+20:34:08.835 > fumadocs-mdx
+20:34:08.835 
+20:34:08.966 [Fumadocs MDX] Noticed Zod v3 in your node_modules, we recommend upgrading to Zod v4 for better compatibility.
+20:34:09.379 [MDX] types generated
+20:34:09.392 
+20:34:09.393 added 37 packages, removed 18 packages, and changed 7 packages in 15s
+20:34:09.393 
+20:34:09.393 333 packages are looking for funding
+20:34:09.394   run `npm fund` for details
+20:34:09.432 Detected Next.js version: 15.5.9
+20:34:09.437 Running "npm run build"
+20:34:09.543 
+20:34:09.546 > fumadocsv0@0.0.0 build
+20:34:09.546 > next build
+20:34:09.546 
+20:34:10.140 [Fumadocs MDX] Noticed Zod v3 in your node_modules, we recommend upgrading to Zod v4 for better compatibility.
+20:34:10.226    ▲ Next.js 15.5.9
+20:34:10.228 
+20:34:10.607 [MDX] updated map file in 53.28533600000003ms
+20:34:10.612    Creating an optimized production build ...
+20:34:15.688 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ค" used in math mode [unicodeTextInMathMode]
+20:34:15.689 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "่" used in math mode [unicodeTextInMathMode]
+20:34:15.690 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "า" used in math mode [unicodeTextInMathMode]
+20:34:15.690 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "เ" used in math mode [unicodeTextInMathMode]
+20:34:15.691 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ด" used in math mode [unicodeTextInMathMode]
+20:34:15.691 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ิ" used in math mode [unicodeTextInMathMode]
+20:34:15.691 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ม" used in math mode [unicodeTextInMathMode]
+20:34:15.692 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ต" used in math mode [unicodeTextInMathMode]
+20:34:15.692 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "่" used in math mode [unicodeTextInMathMode]
+20:34:15.693 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ำ" used in math mode [unicodeTextInMathMode]
+20:34:15.693 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ส" used in math mode [unicodeTextInMathMode]
+20:34:15.694 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ุ" used in math mode [unicodeTextInMathMode]
+20:34:15.694 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ด" used in math mode [unicodeTextInMathMode]
+20:34:15.694 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "เ" used in math mode [unicodeTextInMathMode]
+20:34:15.695 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ด" used in math mode [unicodeTextInMathMode]
+20:34:15.695 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ิ" used in math mode [unicodeTextInMathMode]
+20:34:15.695 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ม" used in math mode [unicodeTextInMathMode]
+20:34:15.696 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ส" used in math mode [unicodeTextInMathMode]
+20:34:15.696 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ู" used in math mode [unicodeTextInMathMode]
+20:34:15.697 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ง" used in math mode [unicodeTextInMathMode]
+20:34:15.697 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ส" used in math mode [unicodeTextInMathMode]
+20:34:15.697 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ุ" used in math mode [unicodeTextInMathMode]
+20:34:15.698 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ด" used in math mode [unicodeTextInMathMode]
+20:34:15.699 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "เ" used in math mode [unicodeTextInMathMode]
+20:34:15.699 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ด" used in math mode [unicodeTextInMathMode]
+20:34:15.700 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ิ" used in math mode [unicodeTextInMathMode]
+20:34:15.702 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ม" used in math mode [unicodeTextInMathMode]
+20:34:15.703 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ต" used in math mode [unicodeTextInMathMode]
+20:34:15.703 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "่" used in math mode [unicodeTextInMathMode]
+20:34:15.703 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ำ" used in math mode [unicodeTextInMathMode]
+20:34:15.704 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ส" used in math mode [unicodeTextInMathMode]
+20:34:15.704 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ุ" used in math mode [unicodeTextInMathMode]
+20:34:15.704 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ด" used in math mode [unicodeTextInMathMode]
+20:34:15.705 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ใ" used in math mode [unicodeTextInMathMode]
+20:34:15.705 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ห" used in math mode [unicodeTextInMathMode]
+20:34:15.705 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ม" used in math mode [unicodeTextInMathMode]
+20:34:15.706 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "่" used in math mode [unicodeTextInMathMode]
+20:34:15.710 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ส" used in math mode [unicodeTextInMathMode]
+20:34:15.710 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ู" used in math mode [unicodeTextInMathMode]
+20:34:15.710 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ง" used in math mode [unicodeTextInMathMode]
+20:34:15.711 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ส" used in math mode [unicodeTextInMathMode]
+20:34:15.711 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ุ" used in math mode [unicodeTextInMathMode]
+20:34:15.711 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ด" used in math mode [unicodeTextInMathMode]
+20:34:15.711 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ใ" used in math mode [unicodeTextInMathMode]
+20:34:15.711 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ห" used in math mode [unicodeTextInMathMode]
+20:34:15.712 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "ม" used in math mode [unicodeTextInMathMode]
+20:34:15.712 LaTeX-incompatible input and strict mode is set to 'warn': Unicode text character "่" used in math mode [unicodeTextInMathMode]
+20:34:33.147 Failed to compile.
+20:34:33.148 
+20:34:33.148 app/layout.tsx
+20:34:33.149 An error occurred in `next/font`.
+20:34:33.149 
+20:34:33.149 Error: Cannot find module '@tailwindcss/postcss'
+20:34:33.149 Require stack:
+20:34:33.150 - /vercel/path0/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js
+20:34:33.150 - /vercel/path0/node_modules/next/dist/build/webpack/config/blocks/css/index.js
+20:34:33.150 - /vercel/path0/node_modules/next/dist/build/webpack/config/index.js
+20:34:33.151 - /vercel/path0/node_modules/next/dist/build/webpack-config.js
+20:34:33.151 - /vercel/path0/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+20:34:33.151 - /vercel/path0/node_modules/next/dist/build/collect-build-traces.js
+20:34:33.151 - /vercel/path0/node_modules/next/dist/build/index.js
+20:34:33.152 - /vercel/path0/node_modules/next/dist/cli/next-build.js
+20:34:33.152     at Function.<anonymous> (node:internal/modules/cjs/loader:1383:15)
+20:34:33.152     at /vercel/path0/node_modules/next/dist/server/require-hook.js:57:36
+20:34:33.153     at Function.resolve (node:internal/modules/helpers:157:19)
+20:34:33.156     at loadPlugin (/vercel/path0/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:53:32)
+20:34:33.156     at /vercel/path0/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:56
+20:34:33.156     at Array.map (<anonymous>)
+20:34:33.156     at getPostCssPlugins (/vercel/path0/node_modules/next/dist/build/webpack/config/blocks/css/plugins.js:185:47)
+20:34:33.157     at async /vercel/path0/node_modules/next/dist/build/webpack/config/blocks/css/index.js:125:36
+20:34:33.157     at async /vercel/path0/node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js:94:33
+20:34:33.157     at async Span.traceAsyncFn (/vercel/path0/node_modules/next/dist/trace/trace.js:157:20)
+20:34:33.157 
+20:34:33.157 ./public/image/licensed-image.jpg
+20:34:33.157 Error: Could not load the "sharp" module using the linux-x64 runtime
+20:34:33.157 Possible solutions:
+20:34:33.157 - Ensure optional dependencies can be installed:
+20:34:33.157     npm install --include=optional sharp
+20:34:33.157 - Ensure your package manager supports multi-platform installation:
+20:34:33.157     See https://sharp.pixelplumbing.com/install#cross-platform
+20:34:33.157 - Add platform-specific dependencies:
+20:34:33.157     npm install --os=linux --cpu=x64 sharp
+20:34:33.157 - Consult the installation documentation:
+20:34:33.157     See https://sharp.pixelplumbing.com/install
+20:34:33.157     at Object.<anonymous> (/vercel/path0/node_modules/sharp/lib/sharp.js:121:9)
+20:34:33.157     at Module._compile (node:internal/modules/cjs/loader:1706:14)
+20:34:33.157     at Object..js (node:internal/modules/cjs/loader:1839:10)
+20:34:33.157     at Module.load (node:internal/modules/cjs/loader:1441:32)
+20:34:33.157     at Function._load (node:internal/modules/cjs/loader:1263:12)
+20:34:33.157     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+20:34:33.157     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+20:34:33.157     at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+20:34:33.163     at mod.require (/vercel/path0/node_modules/next/dist/server/require-hook.js:68:28)
+20:34:33.163     at require (node:internal/modules/helpers:147:16)
+20:34:33.163     at Object.<anonymous> (/vercel/path0/node_modules/sharp/lib/constructor.js:10:1)
+20:34:33.163     at Module._compile (node:internal/modules/cjs/loader:1706:14)
+20:34:33.163     at Object..js (node:internal/modules/cjs/loader:1839:10)
+20:34:33.163     at Module.load (node:internal/modules/cjs/loader:1441:32)
+20:34:33.163     at Function._load (node:internal/modules/cjs/loader:1263:12)
+20:34:33.163     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+20:34:33.164     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+20:34:33.164     at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+20:34:33.164     at mod.require (/vercel/path0/node_modules/next/dist/server/require-hook.js:68:28)
+20:34:33.164     at require (node:internal/modules/helpers:147:16)
+20:34:33.164     at Object.<anonymous> (/vercel/path0/node_modules/sharp/lib/index.js:6:15)
+20:34:33.164     at Module._compile (node:internal/modules/cjs/loader:1706:14)
+20:34:33.164     at Object..js (node:internal/modules/cjs/loader:1839:10)
+20:34:33.164     at Module.load (node:internal/modules/cjs/loader:1441:32)
+20:34:33.164     at Function._load (node:internal/modules/cjs/loader:1263:12)
+20:34:33.164     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+20:34:33.164     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+20:34:33.164     at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+20:34:33.164     at mod.require (/vercel/path0/node_modules/next/dist/server/require-hook.js:68:28)
+20:34:33.164     at require (node:internal/modules/helpers:147:16)
+20:34:33.164     at getSharp (/vercel/path0/node_modules/next/dist/server/image-optimizer.js:179:18)
+20:34:33.164     at optimizeImage (/vercel/path0/node_modules/next/dist/server/image-optimizer.js:742:19)
+20:34:33.164     at /vercel/path0/node_modules/next/dist/build/webpack/loaders/next-image-loader/blur.js:55:107
+20:34:33.165     at Span.traceAsyncFn (/vercel/path0/node_modules/next/dist/trace/trace.js:157:26)
+20:34:33.166     at getBlurImage (/vercel/path0/node_modules/next/dist/build/webpack/loaders/next-image-loader/blur.js:55:56)
+20:34:33.166     at /vercel/path0/node_modules/next/dist/build/webpack/loaders/next-image-loader/index.js:55:109
+20:34:33.166     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+20:34:33.166     at async Span.traceAsyncFn (/vercel/path0/node_modules/next/dist/trace/trace.js:157:20)
+20:34:33.166 
+20:34:33.166 Import trace for requested module:
+20:34:33.166 ./public/image/licensed-image.jpg
+20:34:33.166 ./content/docs/Computer_Science/DM/Exercies/6.mdx?collection=docsCollection&hash=1768224831824
+20:34:33.166 ./.source/index.ts
+20:34:33.166 ./lib/source.ts
+20:34:33.166 ./app/api/search/route.ts
+20:34:33.166 
+20:34:33.166 ./public/image/licensed-image.jpg
+20:34:33.166 Error: Could not load the "sharp" module using the linux-x64 runtime
+20:34:33.166 Possible solutions:
+20:34:33.166 - Ensure optional dependencies can be installed:
+20:34:33.166     npm install --include=optional sharp
+20:34:33.166 - Ensure your package manager supports multi-platform installation:
+20:34:33.167     See https://sharp.pixelplumbing.com/install#cross-platform
+20:34:33.167 - Add platform-specific dependencies:
+20:34:33.167     npm install --os=linux --cpu=x64 sharp
+20:34:33.167 - Consult the installation documentation:
+20:34:33.167     See https://sharp.pixelplumbing.com/install
+20:34:33.167     at Object.<anonymous> (/vercel/path0/node_modules/sharp/lib/sharp.js:121:9)
+20:34:33.167     at Module._compile (node:internal/modules/cjs/loader:1706:14)
+20:34:33.167     at Object..js (node:internal/modules/cjs/loader:1839:10)
+20:34:33.167     at Module.load (node:internal/modules/cjs/loader:1441:32)
+20:34:33.167     at Function._load (node:internal/modules/cjs/loader:1263:12)
+20:34:33.167     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+20:34:33.167     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+20:34:33.167     at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+20:34:33.168     at mod.require (/vercel/path0/node_modules/next/dist/server/require-hook.js:68:28)
+20:34:33.168     at require (node:internal/modules/helpers:147:16)
+20:34:33.168     at Object.<anonymous> (/vercel/path0/node_modules/sharp/lib/constructor.js:10:1)
+20:34:33.168     at Module._compile (node:internal/modules/cjs/loader:1706:14)
+20:34:33.168     at Object..js (node:internal/modules/cjs/loader:1839:10)
+20:34:33.168     at Module.load (node:internal/modules/cjs/loader:1441:32)
+20:34:33.168     at Function._load (node:internal/modules/cjs/loader:1263:12)
+20:34:33.168     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+20:34:33.168     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+20:34:33.168     at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+20:34:33.168     at mod.require (/vercel/path0/node_modules/next/dist/server/require-hook.js:68:28)
+20:34:33.168     at require (node:internal/modules/helpers:147:16)
+20:34:33.168     at Object.<anonymous> (/vercel/path0/node_modules/sharp/lib/index.js:6:15)
+20:34:33.168     at Module._compile (node:internal/modules/cjs/loader:1706:14)
+20:34:33.168     at Object..js (node:internal/modules/cjs/loader:1839:10)
+20:34:33.168     at Module.load (node:internal/modules/cjs/loader:1441:32)
+20:34:33.168     at Function._load (node:internal/modules/cjs/loader:1263:12)
+20:34:33.169     at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+20:34:33.169     at wrapModuleLoad (node:internal/modules/cjs/loader:237:24)
+20:34:33.169     at Module.<anonymous> (node:internal/modules/cjs/loader:1463:12)
+20:34:33.169     at mod.require (/vercel/path0/node_modules/next/dist/server/require-hook.js:68:28)
+20:34:33.169     at require (node:internal/modules/helpers:147:16)
+20:34:33.169     at getSharp (/vercel/path0/node_modules/next/dist/server/image-optimizer.js:179:18)
+20:34:33.169     at optimizeImage (/vercel/path0/node_modules/next/dist/server/image-optimizer.js:742:19)
+20:34:33.169     at /vercel/path0/node_modules/next/dist/build/webpack/loaders/next-image-loader/blur.js:55:107
+20:34:33.169     at Span.traceAsyncFn (/vercel/path0/node_modules/next/dist/trace/trace.js:157:26)
+20:34:33.169     at getBlurImage (/vercel/path0/node_modules/next/dist/build/webpack/loaders/next-image-loader/blur.js:55:56)
+20:34:33.169     at /vercel/path0/node_modules/next/dist/build/webpack/loaders/next-image-loader/index.js:55:109
+20:34:33.169     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+20:34:33.169     at async Span.traceAsyncFn (/vercel/path0/node_modules/next/dist/trace/trace.js:157:20)
+20:34:33.170 
+20:34:33.170 Import trace for requested module:
+20:34:33.170 ./public/image/licensed-image.jpg
+20:34:33.170 
+20:34:33.181 
+20:34:33.181 > Build failed because of webpack errors
+20:34:33.238 Error: Command "npm run build" exited with 1
