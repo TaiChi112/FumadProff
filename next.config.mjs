@@ -20,6 +20,9 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  images: {
+    unoptimized: true, // Disable image optimization to avoid sharp dependency issues
+  },
 };
 
 export default withMDX(config);
