@@ -7,9 +7,15 @@ export default function Layout({ children }: LayoutProps<'/docs'>) {
     <DocsLayout
       tree={source.pageTree} 
       {...baseOptions()}
-      nav={{ ...baseOptions().nav, enabled: true }}
+      nav={
+        { 
+          // title: 'Documentation',
+          ...baseOptions().nav, enabled: true 
+        }
+      }
+      sidebar={{ enabled: true }}
     >
-      {children}
+        {children}
     </DocsLayout>
   );
 }
