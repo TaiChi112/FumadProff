@@ -1,7 +1,7 @@
 // import 'fumadocs-ui/style.css';
 import '@/app/global.css';
-import 'katex/dist/katex.min.css';
-import { RootProvider } from 'fumadocs-ui/provider';
+// import 'katex/dist/katex.min.css';
+import { RootProvider } from 'fumadocs-ui/provider/next';
 import { Inter } from 'next/font/google';
 
 const inter = Inter({
@@ -23,7 +23,9 @@ export default function Layout({ children }: LayoutProps<'/'>) {
             ],
             enabled: true,
           }}
-        >{children}</RootProvider>
+        >
+            {children}
+        </RootProvider>
       </body>
     </html>
   );
