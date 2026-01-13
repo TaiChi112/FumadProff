@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@content-collections/core": "^0.13.1",
+    "@fumadocs/content-collections": "^1.2.5",
     "@tailwindcss/postcss": "^4.1.18",
     "fumadocs-core": "^16.4.7",
     "fumadocs-mdx": "14.2.5",
