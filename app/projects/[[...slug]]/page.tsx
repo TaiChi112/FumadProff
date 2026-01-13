@@ -1,4 +1,4 @@
-import { projectsSource } from '@/lib/source';
+import { projectsSource, source } from '@/lib/source';
 import {
     DocsBody,
     DocsDescription,
@@ -7,21 +7,27 @@ import {
 } from 'fumadocs-ui/page';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import type { TableOfContents } from 'fumadocs-core/server';
+import { createRelativeLink } from 'fumadocs-ui/mdx';
+import { getMDXComponents } from '@/mdx-components';
 
 export default async function Page(props: PageProps<'/projects/[[...slug]]'>) {
     const params = await props.params;
     const page = projectsSource.getPage(params.slug);
     if (!page) notFound();
 
-    const MDXContent = (page.data as { body: React.ComponentType; toc: TableOfContents; full?: boolean }).body;
+    // const MDXContent = (page.data as { body: React.ComponentType; toc: TableOfContents; full?: boolean }).body;
 
     return (
-        <DocsPage toc={(page.data as { body: React.ComponentType; toc: TableOfContents; full?: boolean }).toc} full={(page.data as { body: React.ComponentType; toc: TableOfContents; full?: boolean }).full}>
+        <DocsPage toc={page.data.toc} full={page.data.full}>
             <DocsTitle>{page.data.title}</DocsTitle>
             <DocsDescription>{page.data.description}</DocsDescription>
             <DocsBody>
-                <MDXContent />
+                <page.data.body
+                    components={getMDXComponents({
+                        // this allows you to link to other pages with relative file paths
+                        a: createRelativeLink(source, page),
+                    })}
+                />
             </DocsBody>
         </DocsPage>
     );
