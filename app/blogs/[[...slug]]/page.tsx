@@ -7,7 +7,7 @@ import {
 } from 'fumadocs-ui/page';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import type { TableOfContents } from 'fumadocs-core/server';
+import type { TableOfContents } from 'fumadocs-core/toc';
 
 export default async function Page(props: PageProps<'/blogs/[[...slug]]'>) {
     const params = await props.params;
