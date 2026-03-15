@@ -1,7 +1,6 @@
 {
     "title":"Computer Science",
     "description":"Computer Science Documentation",
-    "icon":"Book",
     "defaultOpen":false,
     "pages":[
         "AI",
