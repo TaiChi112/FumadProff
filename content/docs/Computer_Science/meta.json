@@ -1,12 +1,12 @@
 {
     "title":"Computer Science",
     "description":"Computer Science Documentation",
-    "icon":"Book",
     "defaultOpen":false,
     "pages":[
         "AI",
         "COA",
         "CN",
+        "DB",
         "DSA",
         "DIP",
         "DM",
@@ -15,6 +15,7 @@
         "OOP",
         "FP",
         "HCI",
+        "CySec",
         "SWE"
     ]
 }
