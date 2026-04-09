@@ -1,0 +1,174 @@
+---
+title: "Source Code for Design Algorithms"
+description: "Learn about the source code for designing algorithms."
+# icon: "Code"
+---
+<Callout title="Warning" type="warning">
+This article is a work in progress and may contain incomplete information or inaccuracies. Please verify details from reliable sources.
+</Callout>
+
+# Source Code for Design Algorithms
+```py
+import csv
+import math
+import random
+import statistics
+import time
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+
+
+def benchmark_sort(sizes: list[int], trials: int = 7, seed: int = 42) -> list[tuple[int, float]]:
+    random.seed(seed)
+    results: list[tuple[int, float]] = []
+
+    for n in sizes:
+        data = [random.randint(0, 1_000_000) for _ in range(n)]
+
+        # Warm-up run to reduce one-time interpreter effects.
+        sorted(data)
+
+        timings_ms: list[float] = []
+        for _ in range(trials):
+            sample = data.copy()
+            start = time.perf_counter()
+            sorted(sample)
+            end = time.perf_counter()
+            timings_ms.append((end - start) * 1000)
+
+        results.append((n, statistics.mean(timings_ms)))
+
+    return results
+
+
+def save_csv(results: list[tuple[int, float]], output_path: Path) -> None:
+    with output_path.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerow(["n", "time_ms"])
+        for n, t in results:
+            writer.writerow([n, round(t, 6)])
+
+
+def save_plot(results: list[tuple[int, float]], output_path: Path) -> None:
+    x = [n for n, _ in results]
+    y = [t for _, t in results]
+    y_nlogn = [t / (n * math.log2(n)) for n, t in results]
+
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(9, 10))
+
+    ax1.plot(x, y, marker="o", linewidth=2)
+    ax1.set_title("ch1.1: Sorting Runtime (Python sorted / Timsort)")
+    ax1.set_xlabel("Input size (n)")
+    ax1.set_ylabel("Average time (ms)")
+    ax1.grid(True, alpha=0.3)
+
+    ax2.plot(x, y_nlogn, marker="o", linewidth=2, color="#2a9d8f")
+    ax2.set_title("Normalized runtime: time / (n log2 n)")
+    ax2.set_xlabel("Input size (n)")
+    ax2.set_ylabel("ms / (n log2 n)")
+    ax2.grid(True, alpha=0.3)
+
+    fig.tight_layout()
+    fig.savefig(output_path, dpi=160)
+    plt.close(fig)
+
+
+def print_markdown_table(results: list[tuple[int, float]]) -> None:
+    print("| n | Time (ms) |")
+    print("|---:|---:|")
+    for n, t in results:
+        print(f"| {n} | {t:.4f} |")
+
+
+def main() -> None:
+    root = Path(__file__).resolve().parents[1]
+    data_dir = root / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+
+    sizes = [1_000, 2_000, 4_000, 8_000, 16_000, 32_000, 64_000]
+    results = benchmark_sort(sizes=sizes, trials=7, seed=42)
+
+    csv_path = data_dir / "ch1.1_results.csv"
+    plot_path = data_dir / "ch1.1_plot.png"
+
+    save_csv(results, csv_path)
+    save_plot(results, plot_path)
+
+    print("Saved:")
+    print(csv_path)
+    print(plot_path)
+    print()
+    print_markdown_table(results)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+```py
+from functools import lru_cache
+
+
+def fibonacci_dp(n: int) -> int:
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    if n <= 1:
+        return n
+
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+
+def comb_recursive(n: int, k: int) -> int:
+    if k < 0 or k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    return comb_recursive(n - 1, k) + comb_recursive(n - 1, k - 1)
+
+
+@lru_cache(maxsize=None)
+def comb_memo(n: int, k: int) -> int:
+    if k < 0 or k > n:
+        return 0
+    if k == 0 or k == n:
+        return 1
+    return comb_memo(n - 1, k) + comb_memo(n - 1, k - 1)
+
+
+def comb_dp(n: int, k: int) -> int:
+    if k < 0 or k > n:
+        return 0
+
+    c = [[0] * (k + 1) for _ in range(n + 1)]
+    for i in range(n + 1):
+        upper = min(i, k)
+        for j in range(upper + 1):
+            if j == 0 or j == i:
+                c[i][j] = 1
+            else:
+                c[i][j] = c[i - 1][j] + c[i - 1][j - 1]
+
+    return c[n][k]
+
+
+def main() -> None:
+    print("Fibonacci DP examples")
+    for n in [0, 1, 2, 5, 10, 20]:
+        print(f"F({n}) = {fibonacci_dp(n)}")
+
+    n, k = 10, 4
+    print("\nBinomial coefficient examples")
+    print(f"C({n}, {k}) recursive = {comb_recursive(n, k)}")
+    print(f"C({n}, {k}) memoized = {comb_memo(n, k)}")
+    print(f"C({n}, {k}) dp-table = {comb_dp(n, k)}")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+<a href="https://github.com/TaiChi112/FumadProff/blob/main/content/docs/Computer_Science/DG/SRC_CODE.md" target="_blank" className="editLink_e1cfa">📝 Edit this page on GitHub</a>
