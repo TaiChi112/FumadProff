@@ -1,3 +1,12 @@
+---
+title: Summary (DM)
+description: An overview of Data Mining (DM), its techniques, applications, and challenges.
+tags: [Computer Science, Data Mining, Summary]
+---
+<Callout title="Warning" type="warning">
+This article is a work in progress and may contain incomplete information or inaccuracies. Please verify details from reliable sources.
+</Callout>
+
 # Data Understanding and Preprocessing 
 
 เอกสารนี้สรุปเนื้อหาแกนหลักของบท Data โดยเรียบเรียงใหม่จาก outline เดิมให้กระชับขึ้น ลดหัวข้อซ้ำ และเพิ่มตัวอย่างที่ใช้ทบทวนก่อนสอบ/ก่อนทำโปรเจกต์ได้ทันที
